@@ -21,6 +21,7 @@ public class PlaceOrderController {
     public Label lblWarningMessage;
 
     public void placeOrderOnAction(ActionEvent actionEvent) {
+        System.out.println();
     }
 
     public void BackToHomeOnAction(ActionEvent actionEvent) {
