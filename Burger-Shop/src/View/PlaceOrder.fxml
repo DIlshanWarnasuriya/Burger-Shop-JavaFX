@@ -78,7 +78,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblOrderId" layoutX="272.0" layoutY="176.0" text="B0001">
+      <Label fx:id="lblOrderId" layoutX="272.0" layoutY="176.0" text="00000">
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font>
@@ -88,12 +88,12 @@
             <Font size="15.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtCustomerName" disable="true" focusTraversable="false" layoutX="272.0" layoutY="253.0" prefHeight="31.0" prefWidth="236.0">
+      <TextField fx:id="txtCustomerName" editable="false" focusTraversable="false" layoutX="272.0" layoutY="253.0" prefHeight="31.0" prefWidth="236.0">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtQty" disable="true" focusTraversable="false" layoutX="272.0" layoutY="295.0" prefHeight="31.0" prefWidth="69.0">
+      <TextField fx:id="txtQty" editable="false" focusTraversable="false" layoutX="272.0" layoutY="295.0" prefHeight="31.0" prefWidth="69.0">
          <font>
             <Font size="15.0" />
          </font>
@@ -125,7 +125,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="btnCancle" layoutX="618.0" layoutY="359.0" mnemonicParsing="false" onAction="#CancleOnAction" prefHeight="51.0" prefWidth="190.0" style="-fx-background-color: #c1524d; -fx-background-radius: 30;" text="Cancel" textFill="WHITE">
+      <Button fx:id="btnCancel" layoutX="618.0" layoutY="359.0" mnemonicParsing="false" onAction="#CancelOnAction" prefHeight="51.0" prefWidth="190.0" style="-fx-background-color: #c1524d; -fx-background-radius: 30;" text="Cancel" textFill="WHITE">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
@@ -149,10 +149,11 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Rectangle fx:id="warningMessagePanel" arcHeight="5.0" arcWidth="5.0" fill="#35d776" height="31.0" layoutX="103.0" layoutY="110.0" stroke="TRANSPARENT" strokeType="INSIDE" visible="false" width="712.0" />
-      <Label fx:id="lblWarningMessage" layoutX="107.0" layoutY="117.0" prefHeight="18.0" prefWidth="702.0" style="-fx-alignment: CENTER;" text="Sucsessful" textAlignment="CENTER" textFill="WHITE" visible="false">
+      <Rectangle fx:id="successMessagePanel" arcHeight="5.0" arcWidth="5.0" fill="#35d776" height="25.0" layoutX="103.0" layoutY="110.0" stroke="TRANSPARENT" strokeType="INSIDE" visible="false" width="712.0" />
+      <Rectangle fx:id="ErrorMessagePanel" arcHeight="5.0" arcWidth="5.0" fill="RED" height="25.0" layoutX="103.0" layoutY="110.0" stroke="TRANSPARENT" strokeType="INSIDE" visible="false" width="712.0" />
+      <Label fx:id="lblWarningMessage" layoutX="108.0" layoutY="113.0" prefHeight="18.0" prefWidth="702.0" style="-fx-alignment: CENTER;" text="Sucsessful" textAlignment="CENTER" textFill="WHITE" visible="false">
          <font>
-            <Font name="Arial Bold" size="15.0" />
+            <Font name="Arial Bold" size="13.0" />
          </font>
       </Label>
       <Label fx:id="lblTotal" layoutX="304.0" layoutY="414.0" text="0.00">

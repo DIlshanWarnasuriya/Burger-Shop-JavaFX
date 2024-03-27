@@ -17,8 +17,8 @@ public class HomePageController {
     public Button btnExit;
 
     public void PlaceOrderOnAction(ActionEvent actionEvent) throws IOException {
-        Stage temp = (Stage) btnPlaceOrder.getScene().getWindow();
-        temp.close();
+        Stage thisStage = (Stage) btnPlaceOrder.getScene().getWindow();
+        thisStage.close();
 
         Stage stage = new Stage();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../View/PlaceOrder.fxml"))));
@@ -35,5 +35,6 @@ public class HomePageController {
     }
 
     public void exitOnAction(ActionEvent actionEvent) {
+        System.exit(0);
     }
 }
