@@ -1,6 +1,8 @@
 package DB;
 
 import Model.Orders;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class OrderList {
 
@@ -50,6 +52,19 @@ public class OrderList {
             temp = temp.next;
         }
         return null;
+    }
+
+    public ObservableList<Orders> SearchCustomerOrderDetails(String id){
+        ObservableList <Orders> obList = FXCollections.observableArrayList();
+
+        Node temp = top;
+        while(temp!=null){
+            if (temp.orders.getCustomerId().equals(id)){
+                obList.add(temp.orders);
+            }
+            temp = temp.next;
+        }
+        return obList;
     }
 
 

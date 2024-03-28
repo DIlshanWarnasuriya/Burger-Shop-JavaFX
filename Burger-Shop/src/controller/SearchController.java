@@ -22,7 +22,13 @@ public class SearchController {
     public void BestCustomersOnAction(ActionEvent actionEvent) {
     }
 
-    public void SearchCustomersOnAction(ActionEvent actionEvent) {
+    public void SearchCustomersOnAction(ActionEvent actionEvent) throws IOException{
+        Stage thisStage = (Stage) btnSearchCustomers.getScene().getWindow();
+        thisStage.close();
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../View/SearchCustomers.fxml"))));
+        stage.show();
     }
 
     public void SearchOrdersOnAction(ActionEvent actionEvent) throws IOException {

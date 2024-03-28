@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="535.0" prefWidth="719.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SearchCustomerController">
+   <children>
+      <Region prefHeight="90.0" prefWidth="719.0" style="-fx-background-color: #c1524d;" />
+      <Label layoutX="193.0" layoutY="24.0" text="Search Customers" textFill="WHITE">
+         <font>
+            <Font name="Britannic Bold" size="42.0" />
+         </font>
+      </Label>
+      <Label layoutX="256.0" layoutY="229.0" text="Customer Name">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="405.0" layoutY="229.0" prefHeight="27.0" prefWidth="17.0" text=":">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCustomerId" focusTraversable="false" layoutX="257.0" layoutY="164.0" prefHeight="31.0" prefWidth="215.0" promptText="Enter Customer Id">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btnSearch" layoutX="484.0" layoutY="166.0" mnemonicParsing="false" onAction="#searchOnAction" prefHeight="27.0" prefWidth="70.0" style="-fx-background-color: #c1524d; -fx-background-radius: 30;" text="Search" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Rectangle fx:id="successMessagePanel" arcHeight="5.0" arcWidth="5.0" fill="#35d776" height="25.0" layoutX="112.0" layoutY="110.0" stroke="TRANSPARENT" strokeType="INSIDE" visible="false" width="496.0" />
+      <Rectangle fx:id="ErrorMessagePanel" arcHeight="5.0" arcWidth="5.0" fill="RED" height="25.0" layoutX="112.0" layoutY="110.0" stroke="TRANSPARENT" strokeType="INSIDE" visible="false" width="496.0" />
+      <Label fx:id="lblWarningMessage" layoutX="117.0" layoutY="113.0" prefHeight="18.0" prefWidth="486.0" style="-fx-alignment: CENTER;" text="Sucsessful" textAlignment="CENTER" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Arial Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblCustomerName" layoutX="423.0" layoutY="232.0" text="00000">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnBack" layoutX="171.0" layoutY="166.0" mnemonicParsing="false" onAction="#backOnAction" prefHeight="27.0" prefWidth="70.0" style="-fx-background-color: #c1524d; -fx-background-radius: 30;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TableView fx:id="tblOrders" layoutX="153.0" layoutY="275.0" prefHeight="208.0" prefWidth="418.0">
+        <columns>
+          <TableColumn fx:id="colOrderId" prefWidth="147.20001220703125" text="Order Id" />
+          <TableColumn fx:id="colQty" prefWidth="124.0" text="Qty" />
+            <TableColumn fx:id="colTotal" prefWidth="144.7999267578125" text="Total" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Rectangle fx:id="hidePanel" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="304.0" layoutX="135.0" layoutY="213.0" stroke="TRANSPARENT" strokeType="INSIDE" width="457.0" />
+   </children>
+</AnchorPane>

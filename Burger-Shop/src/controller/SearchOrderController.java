@@ -49,7 +49,7 @@ public class SearchOrderController {
     private  final int CANCEL=2;
 
     public void searchOnAction(ActionEvent actionEvent) {
-        if (txtOrderId.getText().equals("")){
+        if (txtOrderId.getText().isEmpty()){
             WarningMessage("Error", "Please Enter Order Id");
             hidePanel.setVisible(true);
         }
@@ -62,14 +62,16 @@ public class SearchOrderController {
                 txtOrderId.setText("");
             }
             else{
-                hidePanel.setVisible(false);
                 WarningMessage("Success", "Order Found");
+                hidePanel.setVisible(false);
+                txtOrderId.setText("");
+
                 lblOrderId.setText(orders.getOrderId());
                 lblCustomerId.setText(orders.getCustomerId());
                 lblCustomerName.setText(orders.getCustomerName());
-                lblQty.setText(Integer.toString(orders.getQty()));
+                lblQty.setText("" + orders.getQty());
                 lblStatus.setText(getStatus(orders.getStatus()));
-                lblTotal.setText(Double.toString(orders.getTotal()));
+                lblTotal.setText("" + orders.getTotal());
             }
         }
     }
@@ -97,12 +99,12 @@ public class SearchOrderController {
 
     private void WarningMessage(String status, String message){
         if (status.equals("Success")){
+            ClearWarningMessage();
             successMessagePanel.setVisible(true);
-            ErrorMessagePanel.setVisible(false);
         }
         else{
+            ClearWarningMessage();
             ErrorMessagePanel.setVisible(true);
-            successMessagePanel.setVisible(false);
         }
         lblWarningMessage.setVisible(true);
         lblWarningMessage.setText(message);

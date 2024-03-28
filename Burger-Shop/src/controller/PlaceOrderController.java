@@ -47,7 +47,6 @@ public class PlaceOrderController implements Initializable {
 
 
     private final double BURGERPRICE = 500;
-    private double total;
     private final OrderList orderList = OrderList.getInstance();
     private final int PREPARING=0;
 
@@ -110,6 +109,7 @@ public class PlaceOrderController implements Initializable {
             String CId = txtCustomerID.getText();
             String cName = txtCustomerName.getText();
             int qty = Integer.parseInt(txtQty.getText());
+            double total = qty * BURGERPRICE;
 
             orderList.addToList(new Orders(id, CId, cName, qty, PREPARING, total));
 
@@ -143,12 +143,12 @@ public class PlaceOrderController implements Initializable {
 
     private void WarningMessage(String status, String message){
         if (status.equals("Success")){
+            ClearWarningMessage();
             successMessagePanel.setVisible(true);
-            ErrorMessagePanel.setVisible(false);
         }
         else{
+            ClearWarningMessage();
             ErrorMessagePanel.setVisible(true);
-            successMessagePanel.setVisible(false);
         }
         lblWarningMessage.setVisible(true);
         lblWarningMessage.setText(message);
