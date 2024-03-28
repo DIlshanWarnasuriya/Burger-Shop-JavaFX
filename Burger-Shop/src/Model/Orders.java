@@ -5,16 +5,18 @@ public class Orders {
     private String CustomerId;
     private String CustomerName;
     private int qty;
+    private int status;
     private double total;
 
     public Orders() {
     }
 
-    public Orders(String orderId, String customeId, String customerName, int qty, double total) {
+    public Orders(String orderId, String customeId, String customerName, int qty, int status, double total) {
         OrderId = orderId;
         CustomerId = customeId;
         CustomerName = customerName;
         this.qty = qty;
+        this.status=status;
         this.total = total;
     }
 
@@ -48,6 +50,14 @@ public class Orders {
 
     public void setQty(int qty) {
         this.qty = qty;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 
     public double getTotal() {

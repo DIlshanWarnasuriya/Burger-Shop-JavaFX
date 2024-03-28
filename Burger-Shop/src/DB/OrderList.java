@@ -21,6 +21,15 @@ public class OrderList {
             temp.next=n1;
         }
     }
+    public int size(){
+        Node temp = top;
+        int count = 0;
+        while(temp!=null){
+            ++count;
+            temp = temp.next;
+        }
+        return count;
+    }
     public String searchCustomer(String id) {
         Node temp = top;
         while(temp!=null){
@@ -32,15 +41,18 @@ public class OrderList {
         return "null";
     }
 
-    public int size(){
+    public Orders SearchOrder(String id){
         Node temp = top;
-        int count = 0;
         while(temp!=null){
-            ++count;
+            if(temp.orders.getOrderId().equals(id)){
+                return temp.orders;
+            }
             temp = temp.next;
         }
-        return count;
+        return null;
     }
+
+
 
 
 

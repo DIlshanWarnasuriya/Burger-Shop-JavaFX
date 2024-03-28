@@ -1,6 +1,7 @@
 package controller;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -10,11 +11,16 @@ import java.io.IOException;
 
 public class HomePageController {
 
-    public Button btnPlaceOrder;
-    public Button btnSearch;
-    public Button btnViewOrder;
-    public Button btnUpdateOrder;
-    public Button btnExit;
+    @FXML
+    private Button btnPlaceOrder;
+    @FXML
+    private Button btnSearch;
+    @FXML
+    private Button btnViewOrder;
+    @FXML
+    private Button btnUpdateOrder;
+    @FXML
+    private Button btnExit;
 
     public void PlaceOrderOnAction(ActionEvent actionEvent) throws IOException {
         Stage thisStage = (Stage) btnPlaceOrder.getScene().getWindow();

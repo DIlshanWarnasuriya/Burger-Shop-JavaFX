@@ -3,6 +3,7 @@ package controller;
 import DB.OrderList;
 import Model.Orders;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
@@ -17,24 +18,38 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class PlaceOrderController implements Initializable {
-    public Label lblOrderId;
-    public TextField txtCustomerID;
-    public TextField txtCustomerName;
-    public TextField txtQty;
-    public Label lblTotal;
-    public Button btnPlaceOrder;
-    public Button btnBackToHome;
-    public Button btnCalculate;
-    public Button btnSearch;
-    public Rectangle successMessagePanel;
-    public Rectangle ErrorMessagePanel;
-    public Label lblWarningMessage;
-    public Button btnCancel;
+    @FXML
+    private Label lblOrderId;
+    @FXML
+    private TextField txtCustomerID;
+    @FXML
+    private TextField txtCustomerName;
+    @FXML
+    private TextField txtQty;
+    @FXML
+    private Label lblTotal;
+    @FXML
+    private Button btnPlaceOrder;
+    @FXML
+    private Button btnBackToHome;
+    @FXML
+    private Button btnCalculate;
+    @FXML
+    private Button btnSearch;
+    @FXML
+    private Rectangle successMessagePanel;
+    @FXML
+    private Rectangle ErrorMessagePanel;
+    @FXML
+    private Label lblWarningMessage;
+    @FXML
+    private Button btnCancel;
 
 
-    final double BURGERPRICE = 500;
+    private final double BURGERPRICE = 500;
     private double total;
     private final OrderList orderList = OrderList.getInstance();
+    private final int PREPARING=0;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -96,7 +111,7 @@ public class PlaceOrderController implements Initializable {
             String cName = txtCustomerName.getText();
             int qty = Integer.parseInt(txtQty.getText());
 
-            orderList.addToList(new Orders(id,CId,cName,qty, total));
+            orderList.addToList(new Orders(id, CId, cName, qty, PREPARING, total));
 
             WarningMessage("Success", "Order Place Successful");
             generateId();
@@ -129,9 +144,11 @@ public class PlaceOrderController implements Initializable {
     private void WarningMessage(String status, String message){
         if (status.equals("Success")){
             successMessagePanel.setVisible(true);
+            ErrorMessagePanel.setVisible(false);
         }
         else{
             ErrorMessagePanel.setVisible(true);
+            successMessagePanel.setVisible(false);
         }
         lblWarningMessage.setVisible(true);
         lblWarningMessage.setText(message);
