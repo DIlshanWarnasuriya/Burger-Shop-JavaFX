@@ -34,7 +34,7 @@ public class PlaceOrderController implements Initializable {
 
     final double BURGERPRICE = 500;
     private double total;
-    private OrderList orderList = OrderList.getInstance();
+    private final OrderList orderList = OrderList.getInstance();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -45,7 +45,7 @@ public class PlaceOrderController implements Initializable {
         try{
             if (txtCustomerID.getText().length() == 10 && txtCustomerID.getText().charAt(0) == '0'){
                 String CustomerName = orderList.searchCustomer(txtCustomerID.getText());
-                if (CustomerName != "null"){
+                if (!CustomerName.equals("null")){
                     txtCustomerName.setText(CustomerName);
                     WarningMessage("Success", "Customer is Hear");
                     txtCustomerName.setEditable(false);
@@ -87,8 +87,8 @@ public class PlaceOrderController implements Initializable {
     }
 
     public void placeOrderOnAction(ActionEvent actionEvent) {
-        if(txtCustomerID.getText().equals("") || txtCustomerName.getText().equals("") || txtQty.getText().equals("")){
-            WarningMessage("Error", "Please Fill Details");
+        if(txtCustomerID.getText().isEmpty() || txtCustomerName.getText().isEmpty() || txtQty.getText().isEmpty()){
+            WarningMessage("Error", "Please Fill all fields");
         }
         else{
             String id = lblOrderId.getText();

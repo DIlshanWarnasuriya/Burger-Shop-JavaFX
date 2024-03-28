@@ -25,7 +25,13 @@ public class HomePageController {
         stage.show();
     }
 
-    public void searchOnAction(ActionEvent actionEvent) {
+    public void searchOnAction(ActionEvent actionEvent) throws IOException {
+        Stage thisStage = (Stage) btnSearch.getScene().getWindow();
+        thisStage.close();
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../View/Search.fxml"))));
+        stage.show();
     }
 
     public void ViewOrderOnAction(ActionEvent actionEvent) {
