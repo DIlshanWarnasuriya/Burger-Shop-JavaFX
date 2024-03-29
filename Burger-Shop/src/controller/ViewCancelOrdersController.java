@@ -4,7 +4,6 @@ import DB.OrderList;
 import Model.Orders;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
@@ -18,25 +17,17 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ViewDeliveredOrdersController implements Initializable {
-    @FXML
-    private TableView tblDeliveredOrders;
-    @FXML
-    private Button btnBack;
-    @FXML
-    private TableColumn colOrderId;
-    @FXML
-    private TableColumn colCustomerId;
-    @FXML
-    private TableColumn colCustomerName;
-    @FXML
-    private TableColumn colQty;
-    @FXML
-    private TableColumn colValue;
+public class ViewCancelOrdersController implements Initializable {
+    public Button btnBack;
+    public TableView tblCancelOrders;
+    public TableColumn colOrderId;
+    public TableColumn colCustomerId;
+    public TableColumn colCustomerName;
+    public TableColumn colQty;
+    public TableColumn colValue;
 
     private final OrderList orderList = OrderList.getInstance();
-    private final int DELIVERED=1;
-
+    private final int CANCEL=2;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         colOrderId.setCellValueFactory(new PropertyValueFactory<>("OrderId"));
@@ -45,8 +36,8 @@ public class ViewDeliveredOrdersController implements Initializable {
         colQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
         colValue.setCellValueFactory(new PropertyValueFactory<>("total"));
 
-        ObservableList<Orders> list = orderList.getOrdersByStatus(DELIVERED);
-        tblDeliveredOrders.setItems(list);
+        ObservableList<Orders> list = orderList.getOrdersByStatus(CANCEL);
+        tblCancelOrders.setItems(list);
     }
 
     public void backOnAction(ActionEvent actionEvent) throws IOException {
@@ -57,6 +48,4 @@ public class ViewDeliveredOrdersController implements Initializable {
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../View/ViewOrders.fxml"))));
         stage.show();
     }
-
-
 }

@@ -54,16 +54,16 @@ public class SearchCustomerController {
             colQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
             colTotal.setCellValueFactory(new PropertyValueFactory<>("total"));
 
-            ObservableList<Orders> ob = orderList.SearchCustomerOrderDetails(txtCustomerId.getText());
+            ObservableList<Orders> list = orderList.SearchCustomerOrderDetails(txtCustomerId.getText());
 
-            if (ob==null){
+            if (list==null){
                 WarningMessage("Error", "Customer Not found");
                 hidePanel.setVisible(true);
                 txtCustomerId.setText("");
             }
             else{
-                tblOrders.setItems(ob);
-                lblCustomerName.setText(ob.get(0).getCustomerName());
+                tblOrders.setItems(list);
+                lblCustomerName.setText(list.get(0).getCustomerName());
                 WarningMessage("Success", "Customer Found");
                 hidePanel.setVisible(false);
                 txtCustomerId.setText("");
