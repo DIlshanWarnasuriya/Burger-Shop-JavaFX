@@ -9,6 +9,8 @@ public class OrderList {
     private Node top;
     private static OrderList instance;
 
+    private OrderList() {
+    }
 
     public void addToList(Orders orders){
         Node n1 = new Node(orders);
@@ -67,6 +69,18 @@ public class OrderList {
         return obList;
     }
 
+    public ObservableList<Orders> getOrdersByStatus(int ss){
+        ObservableList<Orders> list = FXCollections.observableArrayList();
+
+        Node temp = top;
+        while(temp!=null){
+            if(temp.orders.getStatus() == ss){
+                list.add(temp.orders);
+            }
+            temp = temp.next;
+        }
+        return list;
+    }
 
 
 

@@ -40,7 +40,13 @@ public class HomePageController {
         stage.show();
     }
 
-    public void ViewOrderOnAction(ActionEvent actionEvent) {
+    public void ViewOrderOnAction(ActionEvent actionEvent) throws IOException {
+        Stage thiStage = (Stage) btnViewOrder.getScene().getWindow();
+        thiStage.close();
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../View/ViewOrders.fxml"))));
+        stage.show();
     }
 
     public void updateOrderOnAction(ActionEvent actionEvent) {
