@@ -19,7 +19,13 @@ public class SearchController {
     @FXML
     private Button btnBlack;
 
-    public void BestCustomersOnAction(ActionEvent actionEvent) {
+    public void BestCustomersOnAction(ActionEvent actionEvent) throws IOException {
+        Stage thisStage = (Stage) btnBestCustomers.getScene().getWindow();
+        thisStage.close();
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../View/BestCustomers.fxml"))));
+        stage.show();
     }
 
     public void SearchCustomersOnAction(ActionEvent actionEvent) throws IOException{

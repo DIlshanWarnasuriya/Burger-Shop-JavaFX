@@ -154,9 +154,14 @@ public class UpdateOrderDetailsController implements Initializable {
                 if (0==getStatusNumber(statusMenu.getText())){
                     order.setQty(Integer.parseInt(txtQty.getText()));
                 }
+                else if(1==getStatusNumber(statusMenu.getText())){
+                    order.setQty(Integer.parseInt(txtQty.getText()));
+                    order.setStatus(getStatusNumber(statusMenu.getText()));
+                }
                 else{
                     order.setQty(Integer.parseInt(txtQty.getText()));
                     order.setStatus(getStatusNumber(statusMenu.getText()));
+                    order.setTotal(0);
                 }
                 hidePanel.setVisible(false);
                 WarningMessage("Success", "Update Successful");
