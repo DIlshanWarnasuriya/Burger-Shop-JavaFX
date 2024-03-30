@@ -69,12 +69,12 @@ public class OrderList {
         return obList;
     }
 
-    public ObservableList<Orders> getOrdersByStatus(int ss){
+    public ObservableList<Orders> getOrdersByStatus(int status){
         ObservableList<Orders> list = FXCollections.observableArrayList();
 
         Node temp = top;
         while(temp!=null){
-            if(temp.orders.getStatus() == ss){
+            if(temp.orders.getStatus() == status){
                 list.add(temp.orders);
             }
             temp = temp.next;

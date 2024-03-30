@@ -29,10 +29,22 @@ public class ViewOrderController {
         stage.show();
     }
 
-    public void DeliveredOrdersOnAction(ActionEvent actionEvent) {
+    public void DeliveredOrdersOnAction(ActionEvent actionEvent) throws IOException {
+        Stage thiStage = (Stage) btnDeliveredOrders.getScene().getWindow();
+        thiStage.close();
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../View/ViewDeliveredOrders.fxml"))));
+        stage.show();
     }
 
-    public void CancelOrdersOnAction(ActionEvent actionEvent) {
+    public void CancelOrdersOnAction(ActionEvent actionEvent) throws IOException {
+        Stage thiStage = (Stage) btnCancelOrders.getScene().getWindow();
+        thiStage.close();
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../View/ViewCancelOrders.fxml"))));
+        stage.show();
     }
 
     public void backOnAction(ActionEvent actionEvent) throws IOException {
