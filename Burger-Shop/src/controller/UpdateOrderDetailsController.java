@@ -5,18 +5,20 @@ import Model.Orders;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.SplitMenuButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class UpdateOrderDetailsController {
+public class UpdateOrderDetailsController implements Initializable {
 
+    @FXML
+    private MenuButton statusMenu;
     @FXML
     private TextField txtOrderId;
     @FXML
@@ -33,8 +35,6 @@ public class UpdateOrderDetailsController {
     private Rectangle hidePanel;
     @FXML
     private TextField txtQty;
-    @FXML
-    private SplitMenuButton spnStatus;
     @FXML
     private Rectangle successMessagePanel;
     @FXML
@@ -56,6 +56,35 @@ public class UpdateOrderDetailsController {
     private  final OrderList orderList = OrderList.getInstance();
     private Orders order;
 
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+        MenuItem m1 = new MenuItem("Preparing");
+        MenuItem m2 = new MenuItem("Delivered");
+        MenuItem m3 = new MenuItem("Cancel");
+
+        statusMenu.getItems().remove(0,2);
+        statusMenu.getItems().add(m1);
+        statusMenu.getItems().add(m2);
+        statusMenu.getItems().add(m3);
+
+        m1.setOnAction(evt -> {
+            statusMenu.setText("Preparing");
+        });
+
+        m2.setOnAction(evt -> {
+            statusMenu.setText("Delivered");
+        });
+
+        m3.setOnAction(evt -> {
+            statusMenu.setText("Cancel");
+        });
+    }
+
+
+
     public void searchOnAction(ActionEvent actionEvent) {
         if(txtOrderId.getText().isEmpty()){
             WarningMessage("Error", "Please Insert order Id");
@@ -69,14 +98,24 @@ public class UpdateOrderDetailsController {
                 hidePanel.setVisible(true);
             }
             else{
-                WarningMessage("Success", "Order Found");
-                hidePanel.setVisible(false);
-                lblOrderId.setText(order.getOrderId());
-                lblCustomerId.setText(order.getCustomerId());
-                lblCustomerName.setText(order.getCustomerName());
-                lblTotal.setText("" + order.getTotal());
-                txtQty.setText("" + order.getQty());
-                spnStatus.setText(getStatus(order.getStatus()));
+                if (order.getStatus() == DELIVERED){
+                    WarningMessage("Error", "The Order is already Delivered");
+                    hidePanel.setVisible(true);
+                }
+                else if(order.getStatus() == CANCEL){
+                    WarningMessage("Error", "The Order is Cancel");
+                    hidePanel.setVisible(true);
+                }
+                else{
+                    WarningMessage("Success", "Order Found");
+                    hidePanel.setVisible(false);
+                    lblOrderId.setText(order.getOrderId());
+                    lblCustomerId.setText(order.getCustomerId());
+                    lblCustomerName.setText(order.getCustomerName());
+                    lblTotal.setText("" + order.getTotal());
+                    txtQty.setText("" + order.getQty());
+                    statusMenu.setText(getStatusName(order.getStatus()));
+                }
             }
         }
     }
@@ -102,7 +141,31 @@ public class UpdateOrderDetailsController {
     }
 
     public void updateOnAction(ActionEvent actionEvent) {
-
+        try{
+            if(txtQty.getText().equals(Integer.toString(order.getQty())) && statusMenu.getText().equals(getStatusName(order.getStatus()))){
+                WarningMessage("Error", "No any changes");
+                hidePanel.setVisible(true);
+            }
+            else if (txtQty.getText().equals("0") || txtQty.getText().isEmpty()){
+                WarningMessage("Error", "Please Enter only Number more than zero for Quantity");
+                hidePanel.setVisible(true);
+            }
+            else{
+                if (0==getStatusNumber(statusMenu.getText())){
+                    order.setQty(Integer.parseInt(txtQty.getText()));
+                }
+                else{
+                    order.setQty(Integer.parseInt(txtQty.getText()));
+                    order.setStatus(getStatusNumber(statusMenu.getText()));
+                }
+                hidePanel.setVisible(false);
+                WarningMessage("Success", "Update Successful");
+            }
+        }catch (RuntimeException ex){
+            WarningMessage("Error", "Please Enter only Number more than zero for Quantity");
+            hidePanel.setVisible(true);
+        }
+        System.out.print(statusMenu.getText());
     }
 
     public void backOnAction(ActionEvent actionEvent) throws IOException {
@@ -114,15 +177,27 @@ public class UpdateOrderDetailsController {
         stage.show();
     }
 
-    private String getStatus(int num){
+    private String getStatusName(int num){
         if (num == PREPARING){
-            return "Preparing....";
+            return "Preparing";
         }
         else if(num == DELIVERED){
-            return "Delivered....";
+            return "Delivered";
         }
         else{
-            return "Cancel....";
+            return "Cancel";
+        }
+    }
+
+    private int getStatusNumber(String name){
+        if(name.equals("Preparing")){
+            return 0;
+        }
+        else if(name.equals("Delivered")){
+            return 1;
+        }
+        else{
+            return 2;
         }
     }
 
@@ -143,4 +218,6 @@ public class UpdateOrderDetailsController {
         successMessagePanel.setVisible(false);
         lblWarningMessage.setVisible(false);
     }
+
+
 }

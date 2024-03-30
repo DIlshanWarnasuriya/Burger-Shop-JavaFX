@@ -3,8 +3,8 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Region?>
@@ -139,15 +139,6 @@
             <Font size="15.0" />
          </font>
       </TextField>
-      <SplitMenuButton fx:id="spnStatus" layoutX="377.0" layoutY="411.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="158.0" text="Select Status Option">
-        <items>
-          <MenuItem mnemonicParsing="false" text="Action 1" />
-          <MenuItem mnemonicParsing="false" text="Action 2" />
-        </items>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </SplitMenuButton>
       <Button fx:id="btnCalculate" layoutX="455.0" layoutY="367.0" mnemonicParsing="false" onAction="#calculateOnAction" prefHeight="27.0" prefWidth="80.0" style="-fx-background-color: #c1524d; -fx-background-radius: 30;" text="CalCulate" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
@@ -164,6 +155,12 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <MenuButton fx:id="statusMenu" layoutX="378.0" layoutY="411.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="158.0" text="Select Status">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Action 1" />
+          <MenuItem mnemonicParsing="false" text="Action 2" />
+        </items>
+      </MenuButton>
       <Rectangle fx:id="hidePanel" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="362.0" layoutX="159.0" layoutY="225.0" stroke="TRANSPARENT" strokeType="INSIDE" width="437.0" />
    </children>
 </AnchorPane>
