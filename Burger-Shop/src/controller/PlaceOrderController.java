@@ -120,6 +120,8 @@ public class PlaceOrderController implements Initializable {
             txtQty.setText("");
             lblTotal.setText("0.00");
         }
+        txtCustomerName.setEditable(false);
+        txtQty.setEditable(false);
     }
 
     public void BackToHomeOnAction(ActionEvent actionEvent) throws IOException {

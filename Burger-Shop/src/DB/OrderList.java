@@ -82,6 +82,16 @@ public class OrderList {
         return list;
     }
 
+    public ObservableList<Orders> getToArray(){
+        ObservableList<Orders> list = FXCollections.observableArrayList();
+        Node temp = top;
+        while(temp!=null){
+            list.add(temp.orders);
+            temp = temp.next;
+        }
+        return list;
+    }
+
 
 
 
