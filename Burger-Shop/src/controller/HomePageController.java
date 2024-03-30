@@ -49,7 +49,13 @@ public class HomePageController {
         stage.show();
     }
 
-    public void updateOrderOnAction(ActionEvent actionEvent) {
+    public void updateOrderOnAction(ActionEvent actionEvent) throws IOException {
+        Stage thiStage = (Stage) btnUpdateOrder.getScene().getWindow();
+        thiStage.close();
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../View/UpdateOrderDetails.fxml"))));
+        stage.show();
     }
 
     public void exitOnAction(ActionEvent actionEvent) {

@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="551.0" prefWidth="719.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UpdateOrderDetailsController">
+<AnchorPane prefHeight="616.0" prefWidth="719.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UpdateOrderDetailsController">
    <children>
       <Region prefHeight="90.0" prefWidth="719.0" style="-fx-background-color: #c1524d;" />
       <Label layoutX="167.0" layoutY="24.0" text="Update Order Details" textFill="WHITE">
@@ -20,67 +20,67 @@
             <Font name="Britannic Bold" size="42.0" />
          </font>
       </Label>
-      <Label layoutX="240.0" layoutY="242.0" text="Order ID">
+      <Label layoutX="211.0" layoutY="243.0" text="Order ID">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="240.0" layoutY="281.0" text="Customer Id">
+      <Label layoutX="211.0" layoutY="282.0" text="Customer Id">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="239.0" layoutY="324.0" text="Customer Name">
+      <Label layoutX="210.0" layoutY="325.0" text="Customer Name">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="238.0" layoutY="366.0" text="Burger Qty">
+      <Label layoutX="209.0" layoutY="367.0" text="Burger Qty">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="239.0" layoutY="409.0" text="Status">
+      <Label layoutX="209.0" layoutY="410.0" text="Status">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="239.0" layoutY="474.0" text="Net Total">
+      <Label layoutX="210.0" layoutY="475.0" text="Net Total">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="388.0" layoutY="324.0" prefHeight="27.0" prefWidth="17.0" text=":">
+      <Label layoutX="359.0" layoutY="325.0" prefHeight="27.0" prefWidth="17.0" text=":">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="388.0" layoutY="366.0" prefHeight="27.0" prefWidth="17.0" text=":">
+      <Label layoutX="359.0" layoutY="367.0" prefHeight="27.0" prefWidth="17.0" text=":">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="388.0" layoutY="408.0" prefHeight="27.0" prefWidth="17.0" text=":">
+      <Label layoutX="359.0" layoutY="409.0" prefHeight="27.0" prefWidth="17.0" text=":">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="388.0" layoutY="281.0" prefHeight="27.0" prefWidth="17.0" text=":">
+      <Label layoutX="359.0" layoutY="282.0" prefHeight="27.0" prefWidth="17.0" text=":">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="388.0" layoutY="242.0" prefHeight="27.0" prefWidth="17.0" text=":">
+      <Label layoutX="359.0" layoutY="243.0" prefHeight="27.0" prefWidth="17.0" text=":">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="388.0" layoutY="474.0" prefHeight="27.0" prefWidth="17.0" text=":">
+      <Label layoutX="359.0" layoutY="475.0" prefHeight="27.0" prefWidth="17.0" text=":">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblOrderId" layoutX="406.0" layoutY="245.0" text="00000">
+      <Label fx:id="lblOrderId" layoutX="377.0" layoutY="246.0" text="00000">
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font>
@@ -90,12 +90,12 @@
             <Font size="15.0" />
          </font>
       </TextField>
-      <Label layoutX="406.0" layoutY="477.0" text="Rs. ">
+      <Label layoutX="377.0" layoutY="478.0" text="Rs. ">
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Label>
-      <Line endX="-127.20001220703125" endY="250.80001831054688" layoutX="340.0" layoutY="205.0" startX="234.4000244140625" startY="250.80001831054688" />
+      <Line endX="-127.20001220703125" endY="250.80001831054688" layoutX="311.0" layoutY="206.0" startX="250.5999755859375" startY="250.80001831054688" />
       <Button fx:id="btnSearch" layoutX="484.0" layoutY="166.0" mnemonicParsing="false" onAction="#searchOnAction" prefHeight="27.0" prefWidth="70.0" style="-fx-background-color: #c1524d; -fx-background-radius: 30;" text="Search" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
@@ -111,17 +111,17 @@
             <Font name="Arial Bold" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="lblTotal" layoutX="438.0" layoutY="477.0" text="0.00">
+      <Label fx:id="lblTotal" layoutX="409.0" layoutY="478.0" text="0.00">
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblCustomerId" layoutX="406.0" layoutY="284.0" text="00000">
+      <Label fx:id="lblCustomerId" layoutX="377.0" layoutY="285.0" text="00000">
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblCustomerName" layoutX="406.0" layoutY="327.0" text="00000">
+      <Label fx:id="lblCustomerName" layoutX="377.0" layoutY="328.0" text="00000">
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font>
@@ -134,17 +134,36 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Rectangle fx:id="hidePanel" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="282.0" layoutX="183.0" layoutY="225.0" stroke="TRANSPARENT" strokeType="INSIDE" visible="false" width="354.0" />
-      <TextField fx:id="txtQty" focusTraversable="false" layoutX="405.0" layoutY="364.0" prefHeight="31.0" prefWidth="86.0">
+      <TextField fx:id="txtQty" focusTraversable="false" layoutX="376.0" layoutY="365.0" prefHeight="31.0" prefWidth="69.0">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
-      <SplitMenuButton fx:id="spnStatus" layoutX="406.0" layoutY="410.0" mnemonicParsing="false" text="Select Status Option">
+      <SplitMenuButton fx:id="spnStatus" layoutX="377.0" layoutY="411.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="158.0" text="Select Status Option">
         <items>
           <MenuItem mnemonicParsing="false" text="Action 1" />
           <MenuItem mnemonicParsing="false" text="Action 2" />
         </items>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </SplitMenuButton>
+      <Button fx:id="btnCalculate" layoutX="455.0" layoutY="367.0" mnemonicParsing="false" onAction="#calculateOnAction" prefHeight="27.0" prefWidth="80.0" style="-fx-background-color: #c1524d; -fx-background-radius: 30;" text="CalCulate" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnUpdate" layoutX="207.0" layoutY="536.0" mnemonicParsing="false" onAction="#updateOnAction" prefHeight="31.0" prefWidth="327.0" style="-fx-background-color: #4fae4c; -fx-background-radius: 30;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Rectangle fx:id="hidePanel" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="362.0" layoutX="159.0" layoutY="225.0" stroke="TRANSPARENT" strokeType="INSIDE" width="437.0" />
    </children>
 </AnchorPane>
