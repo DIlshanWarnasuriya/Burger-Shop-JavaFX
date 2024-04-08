@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import javax.imageio.IIOException;
@@ -26,6 +27,8 @@ public class ViewOrderController {
 
         Stage stage = new Stage();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../View/ViewPreparingOrders.fxml"))));
+        stage.getIcons().add(new Image("View/image/burgerIcon.png"));
+        stage.setTitle("Burger Shop");
         stage.show();
     }
 
@@ -35,6 +38,8 @@ public class ViewOrderController {
 
         Stage stage = new Stage();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../View/ViewDeliveredOrders.fxml"))));
+        stage.getIcons().add(new Image("View/image/burgerIcon.png"));
+        stage.setTitle("Burger Shop");
         stage.show();
     }
 
@@ -44,6 +49,8 @@ public class ViewOrderController {
 
         Stage stage = new Stage();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../View/ViewCancelOrders.fxml"))));
+        stage.getIcons().add(new Image("View/image/burgerIcon.png"));
+        stage.setTitle("Burger Shop");
         stage.show();
     }
 
@@ -53,6 +60,8 @@ public class ViewOrderController {
 
         Stage stage = new Stage();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../View/HomePage.fxml"))));
+        stage.getIcons().add(new Image("View/image/burgerIcon.png"));
+        stage.setTitle("Burger Shop");
         stage.show();
     }
 

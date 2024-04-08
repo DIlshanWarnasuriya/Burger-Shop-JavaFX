@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
@@ -179,6 +180,8 @@ public class UpdateOrderDetailsController implements Initializable {
 
         Stage stage = new Stage();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../View/HomePage.fxml"))));
+        stage.getIcons().add(new Image("View/image/burgerIcon.png"));
+        stage.setTitle("Burger Shop");
         stage.show();
     }
 

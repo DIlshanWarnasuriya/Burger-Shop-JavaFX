@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
@@ -77,6 +78,8 @@ public class SearchCustomerController {
 
         Stage stage = new Stage();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../View/Search.fxml"))));
+        stage.getIcons().add(new Image("View/image/burgerIcon.png"));
+        stage.setTitle("Burger Shop");
         stage.show();
     }
 
